@@ -1,38 +1,126 @@
-/* Fondo general */
+/* ===========================
+   Theme base (mejor visual)
+   =========================== */
+
+:root{
+    --bg: #f6f7fb;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: rgba(15, 23, 42, 0.10);
+
+    --primary: #2563eb;
+    --primary-600: #1d4ed8;
+    --primary-50: #eff6ff;
+
+    --shadow: 0 16px 40px rgba(2, 6, 23, 0.10);
+    --shadow-sm: 0 6px 16px rgba(2, 6, 23, 0.08);
+    --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
 body {
     margin: 0;
-    background-color: #f4f6f9;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(900px 450px at 20% 5%, rgba(37, 99, 235, .12), transparent 60%),
+        radial-gradient(700px 380px at 80% 15%, rgba(124, 58, 237, .10), transparent 60%),
+        linear-gradient(180deg, var(--bg), #eef2ff 70%, var(--bg));
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.45;
+}
+
+/* Contenedor global */
+.background{
+    min-height: 100vh;
+    padding: 32px 16px;
+}
+
+/* Separadores */
+hr{
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 20px 0;
 }
 
 /* Contenedor principal */
 .main-container {
-    width: 85%;
-    margin: 50px auto;
-    padding: 40px;
-    background-color: white;
+    width: min(1100px, calc(100% - 24px));
+    margin: 0 auto;
+    padding: 28px 28px 22px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+}
+
+/* Secciones dentro del contenedor (útil si luego quieres "cards") */
+.section{
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
 }
 
 /* Título principal */
 .main-title {
     text-align: center;
-    font-size: 32px;
-    color: #1f2d3d;
+    font-size: clamp(24px, 2.4vw, 34px);
+    color: var(--text);
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    margin: 6px 0 4px;
+}
+
+/* “Badge” suave bajo el título (opcional, se activa si agregas className="title-badge") */
+.title-badge{
+    display: inline-block;
+    margin: 0 auto;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--primary-50);
+    border: 1px solid rgba(37,99,235,.18);
+    color: var(--primary-600);
     font-weight: 600;
-    margin-bottom: 5px;
+    font-size: 12px;
 }
 
 /* Subtítulo */
 .subtitle {
     text-align: center;
-    color: #6c757d;
-    font-size: 16px;
-    margin-bottom: 25px;
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0 0 18px;
 }
 
 /* Contenido dinámico */
 .page-content {
-    margin-top: 30px;
+    margin-top: 18px;
+}
+
+/* Inputs/Dropdowns Dash (mejora general sin tocar layouts) */
+.Select-control, .Select-menu-outer, .Select-menu {
+    border-radius: 12px !important;
+}
+.Select-control{
+    border: 1px solid var(--border) !important;
+    box-shadow: none !important;
+}
+.Select-control:hover{
+    border-color: rgba(37,99,235,.35) !important;
+}
+.is-focused:not(.is-open) > .Select-control{
+    border-color: rgba(37,99,235,.55) !important;
+    box-shadow: 0 0 0 4px rgba(37,99,235,.12) !important;
+}
+
+/* Responsive */
+@media (max-width: 640px){
+    .main-container{
+        padding: 18px 16px;
+    }
 }
