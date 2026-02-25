@@ -1,0 +1,2 @@
+from .router import register_router_callbacks
+from .pregunta_1_callback import register_question1_callbacks
