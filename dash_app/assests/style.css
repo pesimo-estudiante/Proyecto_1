@@ -1,14 +1,38 @@
+/* Fondo general */
 body {
-  margin: 0;
-  background: #dddddd;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+/* Contenedor principal */
+.main-container {
+    width: 85%;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-button:hover {
-  filter: brightness(0.97);
+/* Título principal */
+.main-title {
+    text-align: center;
+    font-size: 32px;
+    color: #1f2d3d;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Subtítulo */
+.subtitle {
+    text-align: center;
+    color: #6c757d;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Contenido dinámico */
+.page-content {
+    margin-top: 30px;
 }
