@@ -2,7 +2,7 @@ from dash import html, dcc
 from user_interface.estilos import box_style
 from user_interface.componentes import layout_shell, footer_signature, nav_top, selection_badge
 
-def variable_page_layout(title, subtitle, main_graph_id, hist_graph_id, selection_text_id, clear_btn_id):
+def diseño_variable_p1(title, subtitle, main_graph_id, hist_graph_id, selection_text_id, clear_btn_id):
     return layout_shell([
         nav_top(show_home=True, back_href="/pregunta-1"),
 
